@@ -1,0 +1,41 @@
+{
+  "name": "ota-backend",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with Fastify-CLI.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node --test test/**/*.test.js",
+    "start": "tsx src/server.ts",
+    "dev": "tsx watch src/server.ts",
+    "start:fastify": "fastify start -l info app.js",
+    "dev:fastify": "fastify start -w -l info -P app.js",
+    "db:generate": "npx hot-updater db generate src/hotUpdater.ts --yes",
+    "db:migrate": "npx hot-updater db migrate src/hotUpdater.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/autoload": "^6.0.0",
+    "@fastify/sensible": "^6.0.0",
+    "@hono/node-server": "^2.0.4",
+    "@hot-updater/server": "^0.32.0",
+    "@hot-updater/supabase": "^0.32.0",
+    "dotenv": "^17.4.2",
+    "drizzle-orm": "^0.44.7",
+    "fastify": "^5.0.0",
+    "fastify-cli": "^8.0.0",
+    "fastify-plugin": "^5.0.0",
+    "hono": "^4.12.23",
+    "postgres": "^3.4.9"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "drizzle-kit": "^0.31.10",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3"
+  }
+}
