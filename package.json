@@ -1,17 +1,15 @@
 {
   "name": "ota-backend",
   "version": "1.0.0",
-  "description": "This project was bootstrapped with Fastify-CLI.",
-  "main": "app.js",
-  "directories": {
-    "test": "test"
+  "description": "OTA Backend for React Native Hot Updater",
+  "main": "dist/server.js",
+  "engines": {
+    "node": ">=18"
   },
   "scripts": {
-    "test": "node --test test/**/*.test.js",
-    "start": "tsx src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
     "dev": "tsx watch src/server.ts",
-    "start:fastify": "fastify start -l info app.js",
-    "dev:fastify": "fastify start -w -l info -P app.js",
     "db:generate": "npx hot-updater db generate src/hotUpdater.ts --yes",
     "db:migrate": "npx hot-updater db migrate src/hotUpdater.ts"
   },
